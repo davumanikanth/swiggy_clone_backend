@@ -30,7 +30,7 @@ app.listen(PORT, () => {
 app.use('/uploads', express.static('uploads'));
 
 
-app.use('home', (req, res) => {
+app.use('/', (req, res) => {
     res.send("Welcome to Swiggy");
 });
 
