@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URL)
   .catch((error) => console.error("Failed to connect to MongoDB:", error));
 
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 app.use(bodyParser.json());
@@ -30,7 +30,7 @@ app.listen(PORT, () => {
 app.use('/uploads', express.static('uploads'));
 
 
-app.use('/home', (req, res) => {
+app.use('home', (req, res) => {
     res.send("Welcome to Swiggy");
 });
 
